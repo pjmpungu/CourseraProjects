@@ -158,22 +158,22 @@ public class Logic
         return 2*Math.PI*radius;
     }
     public static double rightTriangleArea(double base, double height){
-
+        return base*height*0.5;
     }
     public static double rightTrianglePerimeter(double base, double height){
-
+        return (Math.sqrt((base*base)+(height*height))+base+height);
     }
     public static double boxVolume(double length, double width, double depth){
-
+        return length*width*depth;
     }
     public static double boxSurfaceArea(double length, double width, double depth){
-
+        return 2*((length*width)+(length*depth)+(depth*width));
     }
     public static double sphereVolume(double radius){
-
+        return (4.0/3.0)*Math.PI*radius*radius*radius;
     }
     public static double sphereSurfaceArea(double radius){
-
+        return 4*Math.PI*radius*radius;
     }
     
 }
