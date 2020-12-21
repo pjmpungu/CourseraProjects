@@ -1,0 +1,7 @@
+#Mon Dec 21 00:03:10 EST 2020
+base.0=C\:\\Users\\TEMP\\Downloads\\h7WnYHrATVS1p2B6wK1UBg_f63cd7bfd94a4f4c8d4de342b90ccadc_m3-shapes-assignment\\CourseraProjects\\m8-calculator\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=C\:\\Users\\TEMP\\Downloads\\h7WnYHrATVS1p2B6wK1UBg_f63cd7bfd94a4f4c8d4de342b90ccadc_m3-shapes-assignment\\CourseraProjects\\m8-calculator\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
