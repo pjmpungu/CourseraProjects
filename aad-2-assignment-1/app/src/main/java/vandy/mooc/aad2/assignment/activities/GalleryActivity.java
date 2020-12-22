@@ -14,6 +14,7 @@ import java.util.List;
 
 import vandy.mooc.aad2.assignment.R;
 import vandy.mooc.aad2.framework.application.activities.GalleryActivityBase;
+import vandy.mooc.aad2.framework.utils.UriUtils;
 import vandy.mooc.aad2.framework.utils.ViewUtils;
 
 import static vandy.mooc.aad2.framework.utils.UriUtils.*;
@@ -95,7 +96,7 @@ public class GalleryActivity
             // the setItems() helper method.
 
             // TODO - you fill in here.
-
+            super.setItems(getIntent().getParcelableArrayListExtra(INTENT_EXTRA_URLS));
             
         }
     }
@@ -114,9 +115,9 @@ public class GalleryActivity
         // are valid, then return this list. Otherwise return an empty list.
         // TODO - you fill in here replacing this statement with your solution.
         if (validateInput(intent.getParcelableArrayListExtra(INTENT_EXTRA_URLS))) {
-            return new ArrayList<>();
-        }else{
             return intent.getParcelableArrayListExtra(INTENT_EXTRA_URLS);
+        }else{
+            return new ArrayList<Uri>();
         }
     }
 
@@ -145,17 +146,19 @@ public class GalleryActivity
 
         // TODO - you fill in here replacing this statement with you solution.
         if(inputUrls==null){
-            ViewUtils.showToast(R.string.input_url_list_is_null);
+            ViewUtils.showToast(getApplicationContext(), R.string.input_url_list_is_null);
+            return false;
         }else if(inputUrls.size()==0){
-            ViewUtils.showToast(R.string.input_url_list_is_empty);
+            ViewUtils.showToast(getApplicationContext(), R.string.input_url_list_is_empty);
+            return false;
         }else{
             for (Uri element: inputUrls){
-                if(UrlUtils.isValidUrl(element)){
+                if(UriUtils.isValidUrl(String.valueOf(element))){
                     return false;
                 }
             }
+            return true;
         }
-        return true;
     }
 
     /**
