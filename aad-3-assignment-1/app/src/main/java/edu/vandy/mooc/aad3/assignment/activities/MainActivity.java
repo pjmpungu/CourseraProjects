@@ -34,6 +34,7 @@ import android.widget.ViewFlipper;
 
 import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -384,7 +385,8 @@ public class MainActivity extends CustomLoggingActivityBase {
             handleDownloadFailure(data);
             return;
         }else if(resultCode==Activity.RESULT_OK){
-            Log.d(TAG, requestUri);
+            Log.d(TAG, String.valueOf(DownloadAtomFeedService.getRequestUri(data)));
+
         }
 
 
@@ -401,7 +403,7 @@ public class MainActivity extends CustomLoggingActivityBase {
 
         // Update the RecyclerView fragment via calling updateEntries(...) on it.
         // TODO - you fill in here.
-        
+
     }
 
     /**
@@ -423,7 +425,7 @@ public class MainActivity extends CustomLoggingActivityBase {
             // the results via the BroadcastReceiver. Note: Intent.getExtras will return the
             // Bundle stored with putExtras(Bundle)
             // TODO - you fill in here.
-            
+            serviceIntentReceived(intent.getExtras());
         }
     }
 
@@ -437,7 +439,7 @@ public class MainActivity extends CustomLoggingActivityBase {
         // Create a new Intent. Then call 'setAction' on it, passing the 'BROADCAST_ACTION'
         // variable from the DownloadStateReceiver class. Then return the new Intent.
         // TODO - you fill in here replacing the following statement with your solution.
-        return null;
+        return new Intent().setAction(BROADCAST_ACTION);
     }
 
     /**

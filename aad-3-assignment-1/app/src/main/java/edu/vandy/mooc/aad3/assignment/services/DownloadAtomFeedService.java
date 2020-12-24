@@ -179,20 +179,20 @@ public class DownloadAtomFeedService extends IntentService {
     public void onHandleIntent(Intent intent) {
         // Get the URL associated with the Intent data.
         // TODO - you fill in here.
-        intent.getData();
+        Uri uri=intent.getData();
 
         // Download the requested YouTube Atom Feed.
         // TODO - you fill in here.
-        
+        startService(intent);
 
         // Extract the request code.
         // TODO - you fill in here.
-        
+        int code=intent.getIntExtra(REQUEST_CODE,1);
 
         // Send the YouTube Atom Feed Entries back to the
         // MainActivity via the messenger via the sendEntries(...) method.
         // TODO - you fill in here.
-        sendEntries();
+        sendEntries(intent.getParcelableArrayListExtra(ENTRY_ARRAY_KEY),uri,code);
     }
 
     /**
@@ -215,8 +215,7 @@ public class DownloadAtomFeedService extends IntentService {
         // Get an instance of LocalBroadcastManager to send the Broadcast of the Intent via
         // sendBroadcast(...).
         // TODO - you fill in here.
-        LocalBroadcastManager lbm = new LocalBroadcastManager();
-        lbm.sendBroadcast(intent);
+        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
     }
 
     /**
