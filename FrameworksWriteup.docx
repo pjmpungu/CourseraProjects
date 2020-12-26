@@ -1,0 +1,4 @@
+For the HKPSolutions app, it seems to me that we can stick to the basic frameworks that Android Studio always provides. The most important framework will be the implementation 
+of a Content Provider which will hold the data on how productive housekeepers are, and will also hold the account information for each user, since we'll need
+different accounts for housekeepers, managers, and front desk users. Aside from that, we should use the View System, Resource Manager, and Activity Manager frameworks
+to implement basic functionality, like navigating around the app and displaying information.
