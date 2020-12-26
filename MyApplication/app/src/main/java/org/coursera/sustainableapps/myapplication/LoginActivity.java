@@ -34,13 +34,16 @@ public class LoginActivity extends AppCompatActivity {
         //otherwise, only one of them is invalid, so it finds th invalid option
         if(passwordResult.equals(emailResult)){
             emailTextView.setText("Login Success");
+            passwordTextView.setText("");
         }else if (!passwordResult.equals("Login success") && !emailResult.equals("Login success")){
             emailTextView.setText(emailResult);
             passwordTextView.setText(passwordResult);
         }else if(emailResult.equals("Login success")){
             passwordTextView.setText(passwordResult);
+            emailTextView.setText("");
         }else{
             emailTextView.setText(emailResult);
+            passwordTextView.setText("");
         }
     }
     //method to check password, returns corresponding message if password is bad
