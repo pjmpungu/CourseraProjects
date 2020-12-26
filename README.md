@@ -1,7 +1,7 @@
 # CourseraProjects
 Week1 of Course1 was done first, in folders m-3 through m-8
 Week 2 has been started, files begin with aa
-Week 4 project is on unit tests, requirements are below 
+Week 4 project is on unit tests, inf folder called "My Application" requirements are below 
 1. The LoginActivity must have a place for the user to enter their email address
 2. The LoginActivity must have a place for the user to enter their password
 3. The LoginActivity must not display the password in plain text
